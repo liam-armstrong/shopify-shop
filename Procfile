@@ -1,1 +1,1 @@
-web: gunicorn shop.wsgi
+web: pipenv run gunicorn shop.wsgi
