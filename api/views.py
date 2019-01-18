@@ -10,9 +10,10 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
 
     def list(self, request):
-        queryset = Product.objects.all()
-        if request.query_params.get("show_empty"):
+        if request.query_params.get("all"):
             queryset = Product.objects.all()
+        else:
+            queryset = Product.objects.filter(inventory_count__gt=0)
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
