@@ -23,7 +23,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         try:
             product.purchase()
         except:
-            return Response({"Error": "Cannot purchase a product not in stock"}, status=405)
+            return Response({"detail": "Cannot purchase a product not in stock"}, status=405)
         serializer = ProductSerializer(product)
         return Response(serializer.data)
 
