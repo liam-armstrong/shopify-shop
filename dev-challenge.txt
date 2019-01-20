@@ -1,0 +1,17 @@
+Summer 2019 Developer Intern Challenge
+
+GitHub link: https://github.com/liam-armstrong/shopify-shop
+API link: http://shop.liam-armstrong.com/products/
+Documentation: https://documenter.getpostman.com/view/5344038/RzteTCd6
+
+My project was completed with Django, the Python web framework.
+The primary add on that made this project work is the Django REST Framework
+
+Django follows it's own version of the MVC design pattern and each layer is defined in the following files:
+	Model: api/models.py
+	View: called Templates in Django, not built for our API
+	Controller: api/views.py
+	
+Most of the default routing, views and serialization are provided by Django REST Framework ModelViewSet and HyperlinkedModelSerializer
+I simply overrode the default behavior to match the project specifications in the areas where it was required, making for consise code that doesn't require extensive testing
+
